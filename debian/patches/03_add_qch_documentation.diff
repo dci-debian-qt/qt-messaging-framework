@@ -1,0 +1,99 @@
+Description: add qt compressed help (qch) documentation
+Author: Fathi Boudra <fabo@debian.org>
+
+--- a/qmf.pro
++++ b/qmf.pro
+@@ -20,11 +20,9 @@ win32 {
+           SUBDIRS += benchmarks
+ }
+ 
++defineReplace(targetPath) {
++    return($$replace(1, /, $$QMAKE_DIR_SEP))
++}
+ 
+-# Custom target 'doc' to generate documentation
+-dox.target = doc
+-dox.commands = qdoc3 $$_PRO_FILE_PWD_/doc/src/qmf.qdocconf
+-dox.depends =
+-
+-QMAKE_EXTRA_TARGETS += dox
++include(doc/src/doc.pri)
+ 
+--- /dev/null
++++ b/doc/src/doc.pri
+@@ -0,0 +1,49 @@
++QDOC_BIN = $$targetPath($$[QT_INSTALL_BINS]/qdoc3)
++HELPGENERATOR = $$targetPath($$[QT_INSTALL_BINS]/qhelpgenerator)
++
++equals(QMAKE_DIR_SEP, /) {   # unix, mingw+msys
++    QDOC = SRCDIR=$$PWD OUTDIR=$$OUT_PWD/doc/html $$QDOC_BIN
++} else:win32-g++* {   # just mingw
++    # The lack of spaces in front of the && is necessary!
++    QDOC = set SRCDIR=$$PWD&& set OUTDIR=$$OUT_PWD/doc/html&& $$QDOC_BIN
++} else {   # nmake
++    QDOC = set SRCDIR=$$PWD $$escape_expand(\\n\\t) \
++           set OUTDIR=$$OUT_PWD/doc/html $$escape_expand(\\n\\t) \
++           $$QDOC_BIN
++}
++
++QHP_FILE = $$OUT_PWD/doc/html/qmf.qhp
++QCH_FILE = $$OUT_PWD/doc/html/qmf.qch
++
++HELP_DEP_FILES = $$PWD/index.qdoc \
++                 $$PWD/messageserver.qdoc \
++                 $$PWD/messaging.qdoc \
++                 $$PWD/qtmail.qdoc \
++                 $$PWD/qtopiamail.qdoc \
++                 $$PWD/qtopiamail_messageserver.qdoc \
++                 $$PWD/qtopiamail_qmfutil.qdoc \
++                 $$PWD/qmf.qdocconf \
++
++html_docs.commands = $$QDOC $$PWD/qmf.qdocconf
++html_docs.depends += $$HELP_DEP_FILES
++html_docs.files = $$QHP_FILE
++
++qch_docs.commands = $$HELPGENERATOR -o \"$$QCH_FILE\" $$QHP_FILE
++qch_docs.depends += html_docs
++qch_docs.files = $$QCH_FILE
++
++unix:!macx {
++    qch_docs.path = $$[QT_INSTALL_PREFIX]/share/qmf/doc
++    qch_docs.CONFIG += no_check_exist
++    INSTALLS += qch_docs
++}
++
++docs.depends = qch_docs
++QMAKE_EXTRA_TARGETS += html_docs qch_docs docs
++
++OTHER_FILES = $$HELP_DEP_FILES \
++              $$PWD/api/api-pages.qdoc \
++              $$PWD/api/classhierarchy.qdoc \
++              $$PWD/api/groups.qdoc \
++              $$PWD/examples/messageviewer.qdoc \
++              $$PWD/examples/messagenavigator.qdoc
+--- a/doc/src/qmf.qdocconf
++++ b/doc/src/qmf.qdocconf
+@@ -1,5 +1,21 @@
+-project                 = Qtopia Messaging Framework
+-description             = QMF Reference Documentation
++project                 = Qt Messaging Framework
++description             = "Qt Messaging Framework Reference Documentation"
++
++qhp.projects            = QMF
++qhp.QMF.file            = qmf.qhp
++qhp.QMF.namespace       = com.nokia.qmf.100
++qhp.QMF.virtualFolder   = doc
++qhp.QMF.indexTitle      = Qt Messaging Framework
++qhp.QMF.filterAttributes = qmf 1.0.0
++qhp.QMF.customFilters.QMF.name = Qt Messaging Framework 1.0.0
++qhp.QMF.customFilters.QMF.filterAttributes = qmf 1.0.0
++qhp.QMF.indexRoot       =
++qhp.QMF.extraFiles      = \
++                          classic.css \
++                          images/codeless.png \
++                          images/messagenavigator-example.png \
++                          images/messageviewer-example.png \
++                          images/qtlogo.png
+ 
+ imagedirs               = images
+ 

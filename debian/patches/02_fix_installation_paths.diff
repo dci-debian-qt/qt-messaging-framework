@@ -1,0 +1,164 @@
+Description: fix installation paths
+             QMF_INSTALL_ROOT is qmf specific and should be avoided
+Author: Fathi Boudra <fabo@debian.org>
+
+--- a/examples/qtmail/plugins/composers/email/email.pro
++++ b/examples/qtmail/plugins/composers/email/email.pro
+@@ -2,7 +2,7 @@ TEMPLATE = lib
+ TARGET = emailcomposer 
+ CONFIG += qtopiamail qmfutil plugin
+ 
+-target.path += $$QMF_INSTALL_ROOT/plugins/composers
++target.path += $$[QT_INSTALL_LIBS]/qmf/plugins/composers
+ 
+ DEFINES += PLUGIN_INTERNAL
+ 
+--- a/examples/qtmail/plugins/viewers/generic/generic.pro
++++ b/examples/qtmail/plugins/viewers/generic/generic.pro
+@@ -2,7 +2,7 @@ TEMPLATE = lib
+ TARGET = genericviewer 
+ CONFIG += qtopiamail qmfutil plugin
+ 
+-target.path += $$QMF_INSTALL_ROOT/plugins/viewers
++target.path += $$[QT_INSTALL_LIBS]/qmf/plugins/viewers
+ 
+ # Use webkit to render mail if available
+ contains(QT_CONFIG,webkit){
+--- a/src/plugins/contentmanagers/qtopiamailfile/qtopiamailfile.pro
++++ b/src/plugins/contentmanagers/qtopiamailfile/qtopiamailfile.pro
+@@ -2,7 +2,7 @@ TEMPLATE = lib
+ TARGET = qtopiamailfilemanager 
+ CONFIG += qtopiamail plugin
+ 
+-target.path += $$QMF_INSTALL_ROOT/plugins/contentmanagers
++target.path += $$[QT_INSTALL_LIBS]/qmf/plugins/contentmanagers
+ 
+ DEFINES += PLUGIN_INTERNAL
+ 
+--- a/src/plugins/messageservices/imap/imap.pro
++++ b/src/plugins/messageservices/imap/imap.pro
+@@ -2,7 +2,7 @@ TEMPLATE = lib
+ TARGET = imap 
+ CONFIG += messageserver qtopiamail plugin
+ 
+-target.path += $$QMF_INSTALL_ROOT/plugins/messageservices
++target.path += $$[QT_INSTALL_LIBS]/qmf/plugins/messageservices
+ 
+ QT += network
+ 
+--- a/src/plugins/messageservices/pop/pop.pro
++++ b/src/plugins/messageservices/pop/pop.pro
+@@ -2,7 +2,7 @@ TEMPLATE = lib
+ TARGET = pop 
+ CONFIG += qtopiamail messageserver plugin
+ 
+-target.path = $$QMF_INSTALL_ROOT/plugins/messageservices
++target.path = $$[QT_INSTALL_LIBS]/qmf/plugins/messageservices
+ 
+ QT += network
+ 
+--- a/src/plugins/messageservices/qtopiamailfile/qtopiamailfile.pro
++++ b/src/plugins/messageservices/qtopiamailfile/qtopiamailfile.pro
+@@ -2,7 +2,7 @@ TEMPLATE = lib
+ TARGET = qtopiamailfile 
+ CONFIG += qtopiamail messageserver plugin
+ 
+-target.path += $$QMF_INSTALL_ROOT/plugins/messageservices
++target.path += $$[QT_INSTALL_LIBS]/qmf/plugins/messageservices
+ 
+ QT += network
+ 
+--- a/src/plugins/messageservices/smtp/smtp.pro
++++ b/src/plugins/messageservices/smtp/smtp.pro
+@@ -3,7 +3,7 @@ TARGET = smtp
+ 
+ CONFIG += qtopiamail messageserver plugin
+ 
+-target.path += $$QMF_INSTALL_ROOT/plugins/messageservices
++target.path += $$[QT_INSTALL_LIBS]/qmf/plugins/messageservices
+ 
+ QT += network
+ 
+--- a/examples/messagingaccounts/messagingaccounts.pro
++++ b/examples/messagingaccounts/messagingaccounts.pro
+@@ -1,6 +1,6 @@
+ TEMPLATE = app
+ TARGET = messagingaccounts
+-target.path += $$QMF_INSTALL_ROOT/bin
++target.path += $$[QT_INSTALL_BINS]
+ CONFIG += qtopiamail messageserver
+ 
+ DEPENDPATH += .
+--- a/examples/qtmail/app/app.pro
++++ b/examples/qtmail/app/app.pro
+@@ -1,7 +1,7 @@
+ TEMPLATE = app
+ TARGET = qtmail 
+ CONFIG += qmfutil qtopiamail messageserver
+-target.path += $$QMF_INSTALL_ROOT/bin
++target.path += $$[QT_INSTALL_BINS]
+ 
+ DEPENDPATH += . 
+ 
+--- a/examples/qtmail/libs/qmfutil/qmfutil.pro
++++ b/examples/qtmail/libs/qmfutil/qmfutil.pro
+@@ -3,7 +3,7 @@ CONFIG += warn_on
+ CONFIG += qtopiamail
+ TARGET = qmfutil 
+ 
+-target.path += $$QMF_INSTALL_ROOT/lib
++target.path += $$[QT_INSTALL_LIBS]
+ 
+ DEFINES += QMFUTIL_INTERNAL
+ symbian: {
+--- a/src/libraries/messageserver/messageserver.pro
++++ b/src/libraries/messageserver/messageserver.pro
+@@ -3,7 +3,7 @@ CONFIG += warn_on
+ CONFIG += qtopiamail
+ TARGET = messageserver
+ 
+-target.path += $$QMF_INSTALL_ROOT/lib
++target.path += $$[QT_INSTALL_LIBS]
+ 
+ QT *= network
+ 
+@@ -36,7 +36,7 @@ SOURCES += qmailauthenticator.cpp \
+            qmailstoreaccountfilter.cpp \
+            qmailtransport.cpp
+ 
+-header_files.path=$$QMF_INSTALL_ROOT/include/messageserver
++header_files.path=$$[QT_INSTALL_PREFIX]/include/messageserver
+ header_files.files=$$PUBLIC_HEADERS
+ 
+ INSTALLS += header_files
+--- a/src/libraries/qtopiamail/qtopiamail.pro
++++ b/src/libraries/qtopiamail/qtopiamail.pro
+@@ -2,7 +2,7 @@ TEMPLATE = lib
+ CONFIG += warn_on
+ TARGET = qtopiamail
+ 
+-target.path += $$QMF_INSTALL_ROOT/lib 
++target.path += $$[QT_INSTALL_LIBS]
+ 
+ DEFINES += QT_BUILD_QCOP_LIB QTOPIAMAIL_INTERNAL
+ win32: {
+@@ -150,7 +150,7 @@ TRANSLATIONS += libqtopiamail-ar.ts \
+                 libqtopiamail-zh_CN.ts \
+                 libqtopiamail-zh_TW.ts
+ 
+-header_files.path=$$QMF_INSTALL_ROOT/include/qtopiamail
++header_files.path=$$[QT_INSTALL_PREFIX]/include/qtopiamail
+ header_files.files=$$PUBLIC_HEADERS
+ 
+ INSTALLS += header_files 
+--- a/src/tools/messageserver/messageserver.pro
++++ b/src/tools/messageserver/messageserver.pro
+@@ -2,7 +2,7 @@ TEMPLATE = app
+ TARGET = messageserver
+ CONFIG += messageserver qtopiamail
+ 
+-target.path += $$QMF_INSTALL_ROOT/bin
++target.path += $$[QT_INSTALL_BINS]
+ 
+ DEPENDPATH += . 
+ 

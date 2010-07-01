@@ -1,0 +1,22 @@
+Description: disable tests and benchmarks
+Author: Fathi Boudra <fabo@debian.org>
+
+--- a/qmf.pro
++++ b/qmf.pro
+@@ -9,7 +9,6 @@ SUBDIRS = src/libraries/qtopiamail \
+           src/plugins/messageservices/qtopiamailfile \
+           src/plugins/contentmanagers/qtopiamailfile \
+           src/tools/messageserver \
+-          tests \
+           examples/qtmail/libs/qmfutil \
+           examples/qtmail/app \
+           examples/qtmail/plugins/viewers/generic \
+@@ -17,7 +16,7 @@ SUBDIRS = src/libraries/qtopiamail \
+           examples/messagingaccounts \
+           
+ # disable benchmark test on mac until ported
+-!macx {
++win32 {
+           SUBDIRS += benchmarks
+ }
+ 

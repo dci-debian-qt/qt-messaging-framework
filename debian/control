@@ -1,0 +1,128 @@
+Source: qmf
+Section: libs
+Priority: optional
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Fathi Boudra <fabo@debian.org>
+Build-Depends: debhelper (>= 7.4.15), libqt4-dev (>= 4:4.6.0), qt4-dev-tools (>= 4:4.6.0)
+Standards-Version: 3.9.0
+Homepage: http://labs.trolltech.com/blogs/category/qtmessaging/
+Vcs-Git: git://git.debian.org/pkg-kde/qmf.git
+Vcs-Browser: http://git.debian.org/?p=pkg-kde/qmf.git;a=summary
+
+Package: qmf-dev
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ libmessageserver1 (= ${binary:Version}),
+ libqmfutil1 (= ${binary:Version}),
+ libqtopiamail1 (= ${binary:Version})
+Suggests: qmf-doc
+Description: Qt Messaging Framework (QMF) - development files
+ The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
+ process that can be used to build email clients, and more generally software
+ that interacts with email and mail servers.
+ .
+ This package contains the development files needed to build Qt applications
+ using Qt Messaging Framework libraries.
+
+Package: libmessageserver1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Qt Messaging Framework (QMF) message server support library
+ The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
+ process that can be used to build email clients, and more generally software
+ that interacts with email and mail servers.
+ .
+ This package contains the message server support library. It provides
+ assistance in developing GUI clients that access messaging data.
+
+Package: libqmfutil1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Qt Messaging Framework (QMF) messaging client utility library
+ The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
+ process that can be used to build email clients, and more generally software
+ that interacts with email and mail servers.
+ .
+ This package contains the messaging client utility library. It provides
+ assistance in developing plugins for the Message Server daemon.
+
+Package: libqtopiamail1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Qt Messaging Framework (QMF) client library
+ The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
+ process that can be used to build email clients, and more generally software
+ that interacts with email and mail servers.
+ .
+ The Client library provides classes giving access to all messages stored on
+ the device, via a uniform interface. It simplifies the task of creating
+ messaging client applications, and permits other Messaging Framework
+ applications to interact with messaging data where appropriate. New types of
+ messages can be supported by the library without modification to existing
+ client applications.
+ .
+ This package contains a library for developing applications that work with
+ messages.
+
+Package: qmf-messageserver
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Section: utils
+Description: Qt Messaging Framework (QMF) message server
+ The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
+ process that can be used to build email clients, and more generally software
+ that interacts with email and mail servers.
+ .
+ The MessageServer application is a daemon, designed to run continuously while
+ providing services to client applications. It provides messaging transport
+ functionality, communicating with external servers on behalf of Messaging
+ Framework client applications. New types of messaging (such as Instant
+ Messages or video messages) can be handled by the server application without
+ modification to existing client applications.
+ .
+ This package contains a server application supporting multiple messaging
+ transport mechanisms.
+
+Package: qmf-examples
+Architecture: any
+Section: x11
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Qt Messaging Framework (QMF) examples
+ The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
+ process that can be used to build email clients, and more generally software
+ that interacts with email and mail servers.
+ .
+ The Messages example client application provides an implementation of standard
+ functionality for creating and viewing messages.
+ .
+ This package contains an example client application supporting common
+ messaging functionality.
+
+Package: qmf-dbg
+Priority: extra
+Architecture: any
+Section: debug
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ libmessageserver1 (= ${binary:Version}),
+ libqmfutil1 (= ${binary:Version}),
+ libqtopiamail1 (= ${binary:Version})
+Description: Qt Messaging Framework (QMF) - debugging symbols
+ The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
+ process that can be used to build email clients, and more generally software
+ that interacts with email and mail servers.
+ .
+ This package contains the debugging symbols for the Qt Messaging Framework
+ (QMF) libraries.
+
+Package: qmf-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Suggests: qt4-dev-tools, qt4-doc
+Description: Qt Messaging Framework (QMF) - documentation
+ The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
+ process that can be used to build email clients, and more generally software
+ that interacts with email and mail servers.
+ .
+ This package contains the documentation for Qt Messaging Framework (QMF).
