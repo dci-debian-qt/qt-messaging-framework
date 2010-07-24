@@ -162,3 +162,38 @@ Author: Fathi Boudra <fabo@debian.org>
  
  DEPENDPATH += . 
  
+--- a/benchmarks/tst_messageserver/tst_messageserver.pro
++++ b/benchmarks/tst_messageserver/tst_messageserver.pro
+@@ -3,7 +3,7 @@ CONFIG += qtestlib unittest
+ CONFIG += messageserver qtopiamail
+ 
+ TARGET = tst_messageserver 
+-target.path += $$QMF_INSTALL_ROOT/tests
++target.path += $$[QT_INSTALL_LIBS]/qmf/tests
+ 
+ BASE=../../
+ include($$BASE/common.pri)
+--- a/tests/tests.pri
++++ b/tests/tests.pri
+@@ -2,7 +2,7 @@ macx {
+     QMAKE_MACOSX_DEPLOYMENT_TARGET=10.5
+ }
+ 
+-target.path+=$$QMF_INSTALL_ROOT/tests
++target.path+=$$[QT_INSTALL_LIBS]/qmf/tests
+ 
+ QTOPIAMAIL=../../src/libraries/qtopiamail
+ DEPENDPATH += .
+--- a/tests/tst_python_email/tst_python_email.pro
++++ b/tests/tst_python_email/tst_python_email.pro
+@@ -4,8 +4,8 @@ TARGET = tst_python_email
+ 
+ DEFINES += SRCDIR=\\\"$$_PRO_FILE_PWD_\\\"
+ 
+-testdata.path = $$QMF_INSTALL_ROOT/tests/testdata 
+-testdata.files = testdata/
++testdata.path = $$[QT_INSTALL_LIBS]/qmf/tests/testdata
++testdata.files = testdata/*
+ 
+ INSTALLS += testdata
+ 

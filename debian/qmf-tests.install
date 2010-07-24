@@ -46,11 +46,9 @@ usr/lib/qmf/tests/testdata/msg_41.txt
 usr/lib/qmf/tests/testdata/msg_42.txt
 usr/lib/qmf/tests/testdata/msg_43.txt
 usr/lib/qmf/tests/testdata/msg_44.txt
-usr/lib/qmf/tests/tests.xml
 usr/lib/qmf/tests/tst_longstring
 usr/lib/qmf/tests/tst_messageserver
 usr/lib/qmf/tests/tst_python_email
-usr/lib/qmf/tests/tst_qlogsystem
 usr/lib/qmf/tests/tst_qmailaddress
 usr/lib/qmf/tests/tst_qmailcodec
 usr/lib/qmf/tests/tst_qmailmessage

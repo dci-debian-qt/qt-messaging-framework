@@ -2,6 +2,8 @@ qmf (1.0~2010w23-2) UNRELEASED; urgency=low
 
   * Add qmf-tests package and ship the tests.
     Disable 01_disable_test_benchmarks.diff patch.
+  * Add 04_no_rpath_tests_benchmarks.diff to remove rpath from tests and
+    benchmarks.
   * Merge qmf-messageserver and libmessageserver1 packages.
     It doesn't make sense to ship them separately.
 

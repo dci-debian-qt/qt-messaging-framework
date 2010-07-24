@@ -3,7 +3,7 @@ Author: Fathi Boudra <fabo@debian.org>
 
 --- a/qmf.pro
 +++ b/qmf.pro
-@@ -20,11 +20,9 @@ win32 {
+@@ -21,11 +21,9 @@ SUBDIRS = src/libraries/qtopiamail \
            SUBDIRS += benchmarks
  }
  
