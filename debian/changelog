@@ -1,4 +1,4 @@
-qmf (1.0~2010w23-2) UNRELEASED; urgency=low
+qmf (1.0~2010w23-2) experimental; urgency=low
 
   * Add qmf-tests package and ship the tests.
     Disable 01_disable_test_benchmarks.diff patch.

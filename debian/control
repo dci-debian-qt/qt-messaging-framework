@@ -28,6 +28,7 @@ Description: Qt Messaging Framework (QMF) - development files
 Package: libmessageserver1
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: qmf-messageserver
 Replaces: qmf-messageserver (<< 1.0~2010w23-2)
 Description: Qt Messaging Framework (QMF) message server support library
  The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
