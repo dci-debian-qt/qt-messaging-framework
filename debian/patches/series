@@ -1,3 +1,3 @@
-01_disable_test_benchmarks.diff
+#01_disable_test_benchmarks.diff
 02_fix_installation_paths.diff
 03_add_qch_documentation.diff

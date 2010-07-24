@@ -1,3 +1,12 @@
+qmf (1.0~2010w23-2) UNRELEASED; urgency=low
+
+  * Add qmf-tests package and ship the tests.
+    Disable 01_disable_test_benchmarks.diff patch.
+  * Merge qmf-messageserver and libmessageserver1 packages.
+    It doesn't make sense to ship them separately.
+
+ -- Fathi Boudra <fabo@debian.org>  Sat, 24 Jul 2010 13:48:14 +0300
+
 qmf (1.0~2010w23-1) experimental; urgency=low
 
   * Initial release. (Closes: #587747)

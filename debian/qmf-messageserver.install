@@ -1,5 +1,0 @@
-usr/bin/messageserver
-usr/lib/qmf/plugins/messageservices/libimap.so
-usr/lib/qmf/plugins/messageservices/libpop.so
-usr/lib/qmf/plugins/messageservices/libqtopiamailfile.so
-usr/lib/qmf/plugins/messageservices/libsmtp.so
