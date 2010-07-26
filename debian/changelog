@@ -1,3 +1,9 @@
+qmf (1.0~2010w23-3) UNRELEASED; urgency=low
+
+  * Fix debian/control Vcs fields to point to the new location.
+
+ -- Modestas Vainius <modax@debian.org>  Mon, 26 Jul 2010 11:16:41 +0300
+
 qmf (1.0~2010w23-2) experimental; urgency=low
 
   * Add qmf-tests package and ship the tests.
