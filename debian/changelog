@@ -1,8 +1,13 @@
 qmf (1.0~2010w23-3) UNRELEASED; urgency=low
 
+  [ Fathi Boudra ]
+  * Update debian/control: add libqt4-sql-sqlite missing dependency to
+    libmessageserver1 package.
+
+  [ Modestas Vainius ]
   * Fix debian/control Vcs fields to point to the new location.
 
- -- Modestas Vainius <modax@debian.org>  Mon, 26 Jul 2010 11:16:41 +0300
+ -- Fathi Boudra <fabo@debian.org>  Tue, 24 Aug 2010 10:34:27 +0300
 
 qmf (1.0~2010w23-2) experimental; urgency=low
 

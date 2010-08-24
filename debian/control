@@ -27,7 +27,7 @@ Description: Qt Messaging Framework (QMF) - development files
 
 Package: libmessageserver1
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqt4-sql-sqlite
 Conflicts: qmf-messageserver
 Replaces: qmf-messageserver (<< 1.0~2010w23-2)
 Description: Qt Messaging Framework (QMF) message server support library
