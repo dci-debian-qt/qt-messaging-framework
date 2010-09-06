@@ -9,10 +9,12 @@ usr/include/qtopiamail/qmailaccountconfiguration.h
 usr/include/qtopiamail/qmailaccountkey.h
 usr/include/qtopiamail/qmailaccountlistmodel.h
 usr/include/qtopiamail/qmailaccountsortkey.h
+usr/include/qtopiamail/qmailaction.h
 usr/include/qtopiamail/qmailaddress.h
 usr/include/qtopiamail/qmailcodec.h
 usr/include/qtopiamail/qmailcontentmanager.h
 usr/include/qtopiamail/qmaildatacomparator.h
+usr/include/qtopiamail/qmaildisconnected.h
 usr/include/qtopiamail/qmailfolder.h
 usr/include/qtopiamail/qmailfolderfwd.h
 usr/include/qtopiamail/qmailfolderkey.h

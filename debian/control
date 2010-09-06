@@ -3,8 +3,8 @@ Section: libs
 Priority: optional
 Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Fathi Boudra <fabo@debian.org>
-Build-Depends: debhelper (>= 7.4.15), libqt4-dev (>= 4:4.6.0), qt4-dev-tools (>= 4:4.6.0)
-Standards-Version: 3.9.0
+Build-Depends: debhelper (>= 7.4.15), libqt4-dev (>= 4:4.7.0~rc1), qt4-dev-tools (>= 4:4.7.0~rc1)
+Standards-Version: 3.9.1
 Homepage: http://labs.trolltech.com/blogs/category/qtmessaging/
 Vcs-Git: git://git.debian.org/pkg-kde/qmf.git
 Vcs-Browser: http://git.debian.org/?p=pkg-kde/qmf.git;a=summary
