@@ -1,0 +1,24 @@
+Description: Remove rpath from tests and benchmarks
+Author: Fathi Boudra <fabo@debian.org>
+--- a/benchmarks/tst_messageserver/tst_messageserver.pro
++++ b/benchmarks/tst_messageserver/tst_messageserver.pro
+@@ -29,9 +29,6 @@ INCLUDEPATH += . 3rdparty $$BASE/src/lib
+ LIBS += -L$$BASE/src/libraries/qmfmessageserver/build \
+         -L$$BASE/src/libraries/qmfclient/build
+ 
+-QMAKE_LFLAGS += -Wl,-rpath,$$BASE/src/libraries/qmfclient \
+-    -Wl,-rpath,$$BASE/src/libraries/qmfmessageserver
+-
+ HEADERS += benchmarkcontext.h \
+            qscopedconnection.h \
+            testfsusage.h \
+--- a/tests/tests.pri
++++ b/tests/tests.pri
+@@ -9,7 +9,6 @@ DEPENDPATH += .
+ INCLUDEPATH += . $$QMFPATH $$QMFPATH/support
+ LIBS += -L$$QMFPATH/build
+ macx:LIBS += -F$$QMFPATH/build
+-QMAKE_LFLAGS += -Wl,-rpath,$$QMFPATH
+ 
+ include(../common.pri)
+ 

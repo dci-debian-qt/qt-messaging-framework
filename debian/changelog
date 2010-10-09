@@ -1,3 +1,21 @@
+qmf (1.0~2010w39-1) experimental; urgency=low
+
+  * New upstream release - several renaming changes have been made to QMF.
+    These changes are unfortunately source and  binary incompatible.
+  * Update patches to apply against the new release.
+  * Update debian/control:
+    - Adjust packages name
+      libmessageserver1 -> libqmfmessageserver1
+      libqtopiamail1 -> libqmfclient1
+    - Add qmf-doc-html package.
+  * Update debian/rules:
+    - pass QMF_INSTALL_ROOT configure option.
+    - install qmf.sh to set QMF_PLUGINS environment variable.
+    - install messageserver.desktop to autostart messageserver.
+  * Update installed files.
+
+ -- Fathi Boudra <fabo@debian.org>  Sat, 09 Oct 2010 09:47:08 +0300
+
 qmf (1.0~2010w35-1) experimental; urgency=low
 
   * New upstream release.
