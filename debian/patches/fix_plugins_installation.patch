@@ -9,7 +9,7 @@ Author: Fathi Boudra <fabo@debian.org>
 -target.path += $$QMF_INSTALL_ROOT/plugins/messageservices
 +target.path += $$QMF_INSTALL_ROOT/lib/qmf/plugins/messageservices
  
- QT = core network
+ QT += core network
  
 --- a/src/plugins/messageservices/pop/pop.pro
 +++ b/src/plugins/messageservices/pop/pop.pro
