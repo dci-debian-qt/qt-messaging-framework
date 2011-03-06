@@ -2,6 +2,7 @@ qmf (1.0.7~2011w08-1) UNRELEASED; urgency=low
 
   * New upstream release - upload to Sid.
   * Pass CONFIG+=syslog to get debug messages in the syslog.
+  * Update installed headers and fix documentation path.
 
  -- Fathi Boudra <fabo@debian.org>  Sun, 06 Mar 2011 11:25:13 +0200
 
