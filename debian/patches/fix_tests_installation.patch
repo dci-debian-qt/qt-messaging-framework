@@ -29,7 +29,7 @@ Author: Fathi Boudra <fabo@debian.org>
  DEFINES += SRCDIR=\\\"$$_PRO_FILE_PWD_\\\"
  
 -testdata.path = $$QMF_INSTALL_ROOT/tests/testdata 
-+testdata.path = $$QMF_INSTALL_ROOT/lib/qmf/tests/testdata
++testdata.path = $$QMF_INSTALL_ROOT/lib/qmf/tests
  testdata.files = testdata/
  
  INSTALLS += testdata
