@@ -1,4 +1,4 @@
-qmf (1.0.7~2011w08-1) UNRELEASED; urgency=low
+qmf (1.0.7~2011w08-1) unstable; urgency=low
 
   * New upstream release - upload to Sid.
   * Pass CONFIG+=syslog to get debug messages in the syslog.
