@@ -1,5 +1,12 @@
 Description: fix tests installation path
 Author: Fathi Boudra <fabo@debian.org>
+---
+ benchmarks/tst_messageserver/tst_messageserver.pro |    2 +-
+ tests/tests.pri                                    |    2 +-
+ tests/tests.pro                                    |    2 +-
+ tests/tst_python_email/tst_python_email.pro        |    2 +-
+ 4 files changed, 4 insertions(+), 4 deletions(-)
+
 --- a/benchmarks/tst_messageserver/tst_messageserver.pro
 +++ b/benchmarks/tst_messageserver/tst_messageserver.pro
 @@ -3,7 +3,7 @@ CONFIG += qtestlib unittest
@@ -13,7 +20,7 @@ Author: Fathi Boudra <fabo@debian.org>
  include($$BASE/common.pri)
 --- a/tests/tests.pri
 +++ b/tests/tests.pri
-@@ -2,7 +2,7 @@ macx {
+@@ -4,7 +4,7 @@ macx {
      QMAKE_MACOSX_DEPLOYMENT_TARGET=10.5
  }
  
@@ -24,12 +31,22 @@ Author: Fathi Boudra <fabo@debian.org>
  DEPENDPATH += .
 --- a/tests/tst_python_email/tst_python_email.pro
 +++ b/tests/tst_python_email/tst_python_email.pro
-@@ -4,7 +4,7 @@ TARGET = tst_python_email
+@@ -5,7 +5,7 @@ TARGET = tst_python_email
+ !symbian {
+     DEFINES += SRCDIR=\\\"$$_PRO_FILE_PWD_\\\"
  
- DEFINES += SRCDIR=\\\"$$_PRO_FILE_PWD_\\\"
+-    testdata.path = $$QMF_INSTALL_ROOT/tests/testdata
++    testdata.path = $$QMF_INSTALL_ROOT/lib/qmf/tests/testdata
+     testdata.files = testdata/*
  
--testdata.path = $$QMF_INSTALL_ROOT/tests/testdata 
-+testdata.path = $$QMF_INSTALL_ROOT/lib/qmf/tests
- testdata.files = testdata/
+     INSTALLS += testdata
+--- a/tests/tests.pro
++++ b/tests/tests.pro
+@@ -31,6 +31,6 @@ CONFIG += unittest
  
- INSTALLS += testdata
+ # Install test file description
+ test_description.files = tests.xml
+-test_description.path  = $$QMF_INSTALL_ROOT/tests
++test_description.path  = $$QMF_INSTALL_ROOT/lib/qmf/tests
+ 
+ INSTALLS += test_description

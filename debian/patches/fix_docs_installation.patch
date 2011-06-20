@@ -1,5 +1,9 @@
 Description: fix doc installation paths and install qch doc
 Author: Fathi Boudra <fabo@debian.org>
+---
+ doc/src/doc.pri |    8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
 --- a/doc/src/doc.pri
 +++ b/doc/src/doc.pri
 @@ -33,7 +33,7 @@ qch_docs.depends += html_docs

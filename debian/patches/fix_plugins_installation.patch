@@ -1,5 +1,16 @@
 Description: fix plugins installation path
 Author: Fathi Boudra <fabo@debian.org>
+---
+ examples/listfilterplugin/listfilterplugin.pro                      |    2 +-
+ examples/qtmail/plugins/composers/email/email.pro                   |    2 +-
+ examples/qtmail/plugins/viewers/generic/generic.pro                 |    2 +-
+ src/plugins/contentmanagers/qmfstoragemanager/qmfstoragemanager.pro |    2 +-
+ src/plugins/messageservices/imap/imap.pro                           |    2 +-
+ src/plugins/messageservices/pop/pop.pro                             |    2 +-
+ src/plugins/messageservices/qmfsettings/qmfsettings.pro             |    2 +-
+ src/plugins/messageservices/smtp/smtp.pro                           |    2 +-
+ 8 files changed, 8 insertions(+), 8 deletions(-)
+
 --- a/src/plugins/messageservices/imap/imap.pro
 +++ b/src/plugins/messageservices/imap/imap.pro
 @@ -2,7 +2,7 @@ TEMPLATE = lib
