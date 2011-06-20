@@ -35,6 +35,9 @@ usr/include/qmfclient/qmailpluginmanager.h
 usr/include/qmfclient/qmailserviceaction.h
 usr/include/qmfclient/qmailsortkeyargument.h
 usr/include/qmfclient/qmailstore.h
+usr/include/qmfclient/qmailthread.h
+usr/include/qmfclient/qmailthreadkey.h
+usr/include/qmfclient/qmailthreadsortkey.h
 usr/include/qmfclient/qmailtimestamp.h
 usr/include/qmfclient/qprivateimplementation.h
 usr/include/qmfclient/qprivateimplementationdef.h
