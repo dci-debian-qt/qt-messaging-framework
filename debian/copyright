@@ -54,7 +54,7 @@ As an additional permission to the GNU Lesser General Public License version
 2.1, the object code form of a "work that uses the Library" may incorporate
 material from a header file that is part of the Library.  You may distribute
 such object code under terms of your choice, provided that:
-    (i)   the header files of the Library have not been modified; and 
+    (i)   the header files of the Library have not been modified; and
     (ii)  the incorporated material is limited to numerical parameters, data
           structure layouts, accessors, macros, inline functions and
           templates; and
@@ -182,16 +182,16 @@ Copyright for benchmarks/tst_messageserver/3rdparty/valgrind_p.h:
    1. Redistributions of source code must retain the above copyright
       notice, this list of conditions and the following disclaimer.
 
-   2. The origin of this software must not be misrepresented; you must 
-      not claim that you wrote the original software.  If you use this 
-      software in a product, an acknowledgment in the product 
+   2. The origin of this software must not be misrepresented; you must
+      not claim that you wrote the original software.  If you use this
+      software in a product, an acknowledgment in the product
       documentation would be appreciated but is not required.
 
    3. Altered source versions must be plainly marked as such, and must
       not be misrepresented as being the original software.
 
-   4. The name of the author may not be used to endorse or promote 
-      products derived from this software without specific prior written 
+   4. The name of the author may not be used to endorse or promote
+      products derived from this software without specific prior written
       permission.
 
    THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS
@@ -213,4 +213,4 @@ Copyright for benchmarks/tst_messageserver/3rdparty/valgrind_p.h:
    the terms of the GNU General Public License, version 2.  See the
    COPYING file in the source distribution for details.
 
-   ---------------------------------------------------------------- 
+   ----------------------------------------------------------------
