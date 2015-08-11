@@ -1,0 +1,19 @@
+Description: add missing header
+Author: Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>
+Forwarded: no
+Last-Update: 2015-08-11
+
+---
+ src/tools/messageserver/messageserver.cpp |    1 +
+ 1 file changed, 1 insertion(+)
+
+--- a/src/tools/messageserver/messageserver.cpp
++++ b/src/tools/messageserver/messageserver.cpp
+@@ -39,6 +39,7 @@
+ **
+ ****************************************************************************/
+ 
++#include <unistd.h>
+ #include "messageserver.h"
+ #include "servicehandler.h"
+ #include "mailmessageclient.h"

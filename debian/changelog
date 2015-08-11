@@ -1,5 +1,8 @@
 qmf (1.0.7~2011w23.2-3) UNRELEASED; urgency=medium
 
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Add fix_missing_includes.patch to fix a missing include.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 11 Aug 2015 18:55:08 -0300
 
 qmf (1.0.7~2011w23.2-2) unstable; urgency=low
